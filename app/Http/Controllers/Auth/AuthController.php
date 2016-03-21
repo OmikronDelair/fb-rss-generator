@@ -28,7 +28,8 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/home';
+    protected $username = 'name';
 
     /**
      * Create a new authentication controller instance.
@@ -38,11 +39,6 @@ class AuthController extends Controller
     public function __construct()
     {
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
-    }
-
-    public function loginUsername()
-    {
-        return property_exists($this, 'username') ? $this->username : 'name';
     }
 
     /**
