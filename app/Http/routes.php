@@ -27,7 +27,7 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+    Route::resource('entity', 'EntityController');
 });
 
 Route::group(['middleware' => 'web'], function () {
