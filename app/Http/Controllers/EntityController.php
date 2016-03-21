@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Requests\EntityRequest;
 
 class EntityController extends Controller
 {
@@ -34,7 +35,7 @@ class EntityController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EntityRequest $request)
     {
         $request->user()->entities()->create([
             'title' => $request->title,
