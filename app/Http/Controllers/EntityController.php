@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Requests\EntityRequest;
+use App\Entity;
 
 class EntityController extends Controller
 {
@@ -16,7 +17,8 @@ class EntityController extends Controller
      */
     public function index()
     {
-        return view('entities.index');
+        $entities = Entity::all();
+        return view('entities.index', ['entities' => $entities]);
     }
 
     /**
