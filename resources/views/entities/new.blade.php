@@ -9,16 +9,7 @@
                 <div class="panel-heading">New Facebook entity</div>
 
                 <div class="panel-body">
-                    @if(count($errors) > 0)
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-                    
+                    @include('alerts.errors')
                     
                     {!! Form::open(['route' => 'entity.store', 'method' => 'POST']) !!}
         

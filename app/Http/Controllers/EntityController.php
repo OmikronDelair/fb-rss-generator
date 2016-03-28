@@ -16,7 +16,7 @@ class EntityController extends Controller
      */
     public function index()
     {
-        //
+        return view('entities.index');
     }
 
     /**
@@ -42,6 +42,8 @@ class EntityController extends Controller
             'slug' => $request->slug,
             'facebook_id' => $request->facebook_id
         ]);
+
+        return redirect('entity')->with('success', 'Entity registered successfully');
     }
 
     /**
