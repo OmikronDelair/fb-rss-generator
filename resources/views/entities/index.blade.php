@@ -17,9 +17,11 @@
                     </thead>
                     <tbody>
                         @foreach($entities as $entity)
+                        @can('read-entity', $entity)
                         <tr>
                             <td>{{ $entity->title }}</td>
                         </tr>
+                        @endcan
                         @endforeach
                     </tbody>
                 </table>

@@ -26,6 +26,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies($gate);
 
-        //
+        $gate->define('read-entity', function($user, $entity){
+            return $user->id === $entity->user_id;
+        });
     }
 }
